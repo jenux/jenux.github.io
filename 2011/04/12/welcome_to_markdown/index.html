@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Jenux&#39;s Notes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://jenux.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="Markdown" />
+
+
+<meta name="description" content="Github真是个很好的开源产品，正在不断学习中。上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.  
+..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Markdown的一些基础知识 |
+    
+    Jenux&#39;s Notes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Jenux&#39;s Notes" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://jenux.github.io">
+                        Jenux&#39;s Notes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Dev/"><i class="fa "></i>
+                                Dev</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Tools/"><i class="fa "></i>
+                                Tools</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Note/"><i class="fa "></i>
+                                Note</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Life"><i class="fa "></i>
+                                Life</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                Timeline</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Markdown的一些基础知识">
+            
+            Markdown的一些基础知识
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/Notes/">Notes</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Markdown/" rel="tag">Markdown</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2011/04/12</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                3601</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>Github真是个很好的开源产品，正在不断学习中。<br>上周末尝试Github的pages服务，很不错，下载了一些jekyll驱动的blog源码学习，结识了markdown这种轻量级的标记语言.  </p>
+<p>其实从接触vimviki以来，我对这种轻量级的标记语言就很有好感，可能是因为这种方式酷似编写代码吧。<br>粗看了一下Markdown的一些语法，记录如下:</p>
+<a id="more"></a>
+
+<p>#常用格式</p>
+<ul>
+<li>空一行（两个回车）分段</li>
+<li>行末加两个或多个空格才是真正的换行</li>
+<li>插入链接 <code>[链接文字](url)</code></li>
+<li>插入图片：同链接，在前面加叹号<code>![alt文字](url)</code></li>
+</ul>
+<p>#内嵌HTML</p>
+<ul>
+<li>块状标签，像p,div之类，需要在前后各空一行(两个回车)，且开始和结束标签的一行前面不能用空格或Tab缩进</li>
+<li>行内元素， 如a,span,img可以在任何地方使用</li>
+</ul>
+<p>#标题<br>用1－6个#号开始一行表示这一行是标题，如:</p>
+<pre>
+    # 一级标题
+    ## 二级标题
+    ### 三级标题
+</pre>
+
+<p>#引用<br>用右尖括号(&gt;)表示，可以嵌套。可以包含其他Markdown元素， 如：  </p>
+<pre>
+    >##这是标题  
+    >  
+    > 1. 这是Markdown标记语言  
+    > 2. 现在正在学习**blockquote**  
+</pre>
+
+<p>#列表<br>HTML里分为有序列表和无序列表<br>在Markdown中用星号、加号、减号开始一行表示无序列表<br>用数字开始一行表示有序列表，如:</p>
+<pre>
+    * Google
+    * Baidu
+    * Yahoo
+    1. HTML
+    2. Javascript
+    3. Css
+</pre>
+
+<p>#代码及代码块</p>
+<ul>
+<li>插入一行代码，用`包含</li>
+<li>插入大段代码， 在代码前每一行前加四个空格  </li>
+</ul>
+<p>#横线<br>三个或以上星号，减号或下划线单独放在一行即可生成一条横线，如:</p>
+<pre>
+    ******
+    * * *
+    ---
+    -------------
+</pre>
+
+<p>#强调<br>用星号或下划线来实现，两边各放一个会生成em标签，放两个会生成strong标签，如:</p>
+<pre>
+    *单星号*
+    _单下划线_  
+    **双星号*  
+    __双下划线__
+</pre>
+
+<p>会生成： </p>
+<pre> 
+    <em>单星号</em>  
+    <em>单下划线</em>  
+    <strong>双星号</strong>  
+    <strong>双下划线</strong>  
+</pre>
+
+
+
+<hr>
+<p>先到这里，上边写的还没测试过，这是我用Markdown记下的第一篇笔记。<br>有错误的地方我会回来修正。</p>
+<p>#Tips:</p>
+<ul>
+<li>每行末需要打空格两个以上才是真正换行，有点累</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Jenux</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2011/04/16/Git_basic_knowledge/" class="pre-post btn btn-default" title='Git初学者基础知识'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            Git初学者基础知识</span>
+    </a>
+    
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <p>暂无目录</p>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

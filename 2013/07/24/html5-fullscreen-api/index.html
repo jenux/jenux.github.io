@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Jenux&#39;s Notes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://jenux.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="HTML5" />
+
+
+<meta name="description" content="Fullscreen APIHtml5提供了Fullscreen API, 帮助开发者控制浏览器的全屏模式。
+
+Note:最新版文档描述的属性和方法大小写与之前有所不同，经测试Chrome (2..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Introducing HTML5 FullScreen API |
+    
+    Jenux&#39;s Notes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Jenux&#39;s Notes" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://jenux.github.io">
+                        Jenux&#39;s Notes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Dev/"><i class="fa "></i>
+                                Dev</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Tools/"><i class="fa "></i>
+                                Tools</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Note/"><i class="fa "></i>
+                                Note</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Life"><i class="fa "></i>
+                                Life</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                Timeline</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Introducing HTML5 FullScreen API">
+            
+            Introducing HTML5 FullScreen API
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/Notes/">Notes</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/HTML5/" rel="tag">HTML5</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2013/07/24</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                2766</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Fullscreen-API"><a href="#Fullscreen-API" class="headerlink" title="Fullscreen API"></a>Fullscreen API</h1><p>Html5提供了<a target="_blank" rel="noopener" href="http://www.w3.org/TR/fullscreen/">Fullscreen</a> API, 帮助开发者控制浏览器的全屏模式。</p>
+<blockquote>
+<p>Note:<br>最新版文档描述的属性和方法大小写与之前有所不同，经测试Chrome (27.0.1453.116)均支持不同的大小写方式, Firefox (22)不支持最新文档写法。</p>
+</blockquote>
+<h1 id="element-requestFullscreen"><a href="#element-requestFullscreen" class="headerlink" title="element.requestFullscreen()"></a>element.requestFullscreen()</h1><p>以全屏模式显示批定Dom元素。 [注: 前版为 element.requestFullScreen()]</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">launchFullScreen</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (element.requestFullscreen) &#123;</span><br><span class="line">        element.requestFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.mozRequestFullscreen) &#123;</span><br><span class="line">        element.mozRequestFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.webkitRequestFullscreen) &#123;</span><br><span class="line">        element.webkitRequestFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.reqestFullScreen) &#123;</span><br><span class="line">        element.requestFullScreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.mozRequestFullScreen) &#123;</span><br><span class="line">        element.mozRequestFullScreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.webkitRequestFullScreen) &#123;</span><br><span class="line">        element.webkitRequestFullScreen();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="document-exitFullscreen"><a href="#document-exitFullscreen" class="headerlink" title="document.exitFullscreen()"></a>document.exitFullscreen()</h1><p>退出全屏模式。 [注: 前版为 element.cancelFullScreen()]</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cancelFullScreen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.exitFullscreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.exitFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.mozExitFullscreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.mozExitFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.webkitExitFullscreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.webkitExitFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.cancelFullScreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.cancelFullScreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.mozCancelFullScreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.mozCancelFullScreen()</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">document</span>.webkitCancelFullScreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.webkitCancelFullScreen()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Fullscreen-CSS"><a href="#Fullscreen-CSS" class="headerlink" title="Fullscreen CSS"></a>Fullscreen CSS</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Fullscreen CSS */</span></span><br><span class="line">:-webkit-full-screen &#123;</span><br><span class="line">    background: pink;</span><br><span class="line">&#125;</span><br><span class="line">:-moz-full-screen &#123;</span><br><span class="line">    background: pink;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* deeper elements */</span></span><br><span class="line"> :-webkit-full-screen #container &#123;</span><br><span class="line">    width: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h1><ul>
+<li>document . fullscreenEnabled<br>true/false, document是否支持显示全屏</li>
+<li>document . fullscreenElement<br>返回全屏DOM元素</li>
+</ul>
+<h1 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h1><iframe width="100%" height="300" src="http://jsfiddle.net/jenux/KK2mm/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Jenux</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2013/11/01/write-your-blog-with-octopress-and-git/" class="pre-post btn btn-default" title='Write your blog with Octopress and Git'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            Write your blog with Octopress and Git</span>
+    </a>
+    
+    
+    <a href="/2013/07/16/htmlelement-dataset/" class="next-post btn btn-default" title='HTMLElement dataset'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            HTMLElement dataset</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Fullscreen-API"><span class="toc-text">Fullscreen API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#element-requestFullscreen"><span class="toc-text">element.requestFullscreen()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#document-exitFullscreen"><span class="toc-text">document.exitFullscreen()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fullscreen-CSS"><span class="toc-text">Fullscreen CSS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B1%9E%E6%80%A7"><span class="toc-text">其他属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E4%BE%8B"><span class="toc-text">代码实例</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

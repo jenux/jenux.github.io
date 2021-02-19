@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Jenux&#39;s Notes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://jenux.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="Toolkit" />
+
+
+<meta name="description" content="
+
+Grunt是一个基于任务的Javascript项目命令行构建工具(The Javascript Task Runner)
+为什么需要任务构建一句话: 自动化. 可以使重复执行一些任务时更加轻..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Grunt:基于任务的Javascript项目命令行构建工具 |
+    
+    Jenux&#39;s Notes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Jenux&#39;s Notes" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://jenux.github.io">
+                        Jenux&#39;s Notes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Dev/"><i class="fa "></i>
+                                Dev</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Tools/"><i class="fa "></i>
+                                Tools</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Note/"><i class="fa "></i>
+                                Note</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Life"><i class="fa "></i>
+                                Life</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                Timeline</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Grunt:基于任务的Javascript项目命令行构建工具">
+            
+            Grunt:基于任务的Javascript项目命令行构建工具
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/Dev/">Dev</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Toolkit/" rel="tag">Toolkit</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2013/07/03</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                2787</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <img src="http://gruntjs.com/img/grunt-logo.png" class="left" width="120" title="GRUNT">
+
+<p><a target="_blank" rel="noopener" href="http://gruntjs.com/">Grunt</a>是一个基于任务的Javascript项目命令行构建工具(The Javascript Task Runner)</p>
+<h1 id="为什么需要任务构建"><a href="#为什么需要任务构建" class="headerlink" title="为什么需要任务构建"></a>为什么需要任务构建</h1><p>一句话: 自动化. 可以使重复执行一些任务时更加轻松, 如: 压缩, 合并, unit testing等等. </p>
+<p>In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you’ve configured it, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
+<p>当前版本: v0.4.1</p>
+<a id="more"></a>
+
+<h1 id="为什么选择Grunt"><a href="#为什么选择Grunt" class="headerlink" title="为什么选择Grunt"></a>为什么选择Grunt</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="http://gruntjs.com/plugins">Plugins</a></p>
+<p>很多你需要的任务已经作为Grunt的plugin实现了，并且每天有更多的plugin被提交, 如:<br>coffeeScript, jade, JSHint, less, require.js, Sass…</p>
+<p>The Grunt ecosystem is huge and it’s growing every day. With literally hundreds of plugins to choose from, you can use Grunt to automate just about anything with a minimum of effort. If someone hasn’t already built what you need, authoring and publishing your own Grunt plugin to npm is a breeze.</p>
+</li>
+<li><p>Who uses Grunt</p>
+<p>如: Twitter, jQuery, Adobe, Modernizr…</p>
+</li>
+</ul>
+<h1 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h1><p>Grunt和grunt plugins的安装与管理需要npm,  所以依赖于Node.js<br>Grunt 0.4.x 要求Node.js版本 &gt;= 0.8.0</p>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><ul>
+<li>cd to project directory.</li>
+<li>安装依赖 <code>npm install</code></li>
+<li>运行 <code>grunt</code></li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Note: 安装grunt-cli并不代表安装了grunt task runner.</p>
+</blockquote>
+<h1 id="创建一个新的grunt项目"><a href="#创建一个新的grunt项目" class="headerlink" title="创建一个新的grunt项目"></a>创建一个新的grunt项目</h1><p>典型的创建会在项目里添加2个文件: package.json 和 Gruntfile.</p>
+<ul>
+<li>package.json: 这个文件用来存储npm需要的元数据,以发布项目为一个npm的模块. 你需要在<em>devDependencies</em> 里列出需要的Grunt和Grunt plugins</li>
+<li>Gruntfile: 文件可以命名为Gruntfile.js或Gruntfile.coffee, 用来配置或定义任务, 并加载Grunt plugins</li>
+</ul>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>__package.json__需要和__Gruntfile__一同放在项目根目录, 并且提交到源代码库里. 运行<em>npm install</em>, _package.json_里列出来的依赖将被安装.</p>
+<ul>
+<li>通过<a target="_blank" rel="noopener" href="http://gruntjs.com/project-scaffolding">grunt-init</a> 模板创建(需要npm-install -g grunt-init)</li>
+<li><a target="_blank" rel="noopener" href="https://npmjs.org/doc/init.html">npm init</a>, 将创建一个基本的package.json文件</li>
+<li>以下面的例子为基础, 根据需求进行扩展, 需要遵循这个<a target="_blank" rel="noopener" href="https://npmjs.org/doc/json.html">规范</a><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;my-project-name&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.1.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;devDependencies&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;grunt&quot;</span>: <span class="string">&quot;~0.4.1&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;grunt-contrib-jshint&quot;</span>: <span class="string">&quot;~0.6.0&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;grunt-contrib-nodeunit&quot;</span>: <span class="string">&quot;~0.2.0&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;grunt-contrib-uglify&quot;</span>: <span class="string">&quot;~0.2.2&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="安装Grunt-和-gruntplugins"><a href="#安装Grunt-和-gruntplugins" class="headerlink" title="安装Grunt 和 gruntplugins"></a>安装Grunt 和 gruntplugins</h2>一个简便的方式安装Grunt和gruntplugins到已有的package.json, 是执行命令<code>npm install &lt;module&gt; --save-dev</code>.<br>不仅可以安装<module>, 而且自动添加到<em>devDependencies</em><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install grunt --save-dev</span><br></pre></td></tr></table></figure>
+<h2 id="Gruntfile"><a href="#Gruntfile" class="headerlink" title="Gruntfile"></a>Gruntfile</h2>_Gruntfile.js_或_Gruntfile.coffee_是一个有效的Javascript或CoffeeScript文件,与_package.json_文件同放在项目根目录.<br>并且需要提交到项目源码库, 由下面几部分组成:</li>
+</ul>
+<ul>
+<li>Wrapper function</li>
+<li>Project和Task定义</li>
+<li>加载Grunt plugins 和 任务</li>
+<li>其他自定义任务</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Project configuration.</span></span><br><span class="line">  grunt.initConfig(&#123;</span><br><span class="line">    pkg: grunt.file.readJSON(<span class="string">&#x27;package.json&#x27;</span>),</span><br><span class="line">    uglify: &#123;</span><br><span class="line">      options: &#123;</span><br><span class="line">        banner: <span class="string">&#x27;/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today(&quot;yyyy-mm-dd&quot;) %&gt; */\n&#x27;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      build: &#123;</span><br><span class="line">        src: <span class="string">&#x27;src/&lt;%= pkg.name %&gt;.js&#x27;</span>,</span><br><span class="line">        dest: <span class="string">&#x27;build/&lt;%= pkg.name %&gt;.min.js&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Load the plugin that provides the &quot;uglify&quot; task.</span></span><br><span class="line">  grunt.loadNpmTasks(<span class="string">&#x27;grunt-contrib-uglify&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Default task(s).</span></span><br><span class="line">  grunt.registerTask(<span class="string">&#x27;default&#x27;</span>, [<span class="string">&#x27;uglify&#x27;</span>]);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Jenux</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2013/07/16/htmlelement-dataset/" class="pre-post btn btn-default" title='HTMLElement dataset'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            HTMLElement dataset</span>
+    </a>
+    
+    
+    <a href="/2013/07/02/bower-package-manager-for-web-by-twitter/" class="next-post btn btn-default" title='Bower:来自Twitter团队的前端包管理器'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Bower:来自Twitter团队的前端包管理器</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%BB%BB%E5%8A%A1%E6%9E%84%E5%BB%BA"><span class="toc-text">为什么需要任务构建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Grunt"><span class="toc-text">为什么选择Grunt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96"><span class="toc-text">依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-text">运行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84grunt%E9%A1%B9%E7%9B%AE"><span class="toc-text">创建一个新的grunt项目</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#package-json"><span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Grunt-%E5%92%8C-gruntplugins"><span class="toc-text">安装Grunt 和 gruntplugins</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gruntfile"><span class="toc-text">Gruntfile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例:</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Jenux&#39;s Notes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://jenux.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="Blog" />
+
+
+<meta name="description" content="Octopress is a blogging framework designed for Jekyll, the blog aware static site generator power..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Write your blog with Octopress and Git |
+    
+    Jenux&#39;s Notes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Jenux&#39;s Notes" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://jenux.github.io">
+                        Jenux&#39;s Notes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Dev/"><i class="fa "></i>
+                                Dev</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Tools/"><i class="fa "></i>
+                                Tools</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Note/"><i class="fa "></i>
+                                Note</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Life"><i class="fa "></i>
+                                Life</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                Timeline</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Write your blog with Octopress and Git">
+            
+            Write your blog with Octopress and Git
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/Tools/">Tools</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Blog/" rel="tag">Blog</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2013/11/01</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                2666</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p><a href="octopress.org">Octopress</a> is a blogging framework designed for Jekyll, the blog aware static site generator powering Github Pages.<br>As you know, you can set up a free blog base on Github Pages service, and using octopress, you can easily set up it.<br>Just simply clone or fork Octopress, install dependenciesand the theme, and you’re set.</p>
+<p>You should be comfortable running shell commands and familiar with the basics of Git.</p>
+<h1 id="Required"><a href="#Required" class="headerlink" title="Required"></a>Required</h1><ul>
+<li>Install <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></li>
+<li>Install Ruby 1.9.3 or greater using either <a target="_blank" rel="noopener" href="http://octopress.org/docs/setup/rbenv">rbenv</a> or <a target="_blank" rel="noopener" href="http://octopress.org/docs/setup/rvm">RVM</a>.<br>If ruby –version doesn’t say you’re using Ruby at least 1.9.3, revisit your rbenv or RVM installation.</li>
+</ul>
+<h1 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h1><p>Octopress is easy to set up and deploy.</p>
+<ol>
+<li>clone git repository<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git://github.com/imathis/octopress.git myblog</span><br><span class="line">$ <span class="built_in">cd</span> myblog</span><br></pre></td></tr></table></figure></li>
+<li>Install dependencies<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem install bundler</span><br><span class="line">$ rbenv <span class="built_in">rehash</span>  <span class="comment"># If you use rbenv, rehash to be able to run the bundle command</span></span><br><span class="line">$ bundle install</span><br></pre></td></tr></table></figure></li>
+<li>Install default Octopress theme<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rake install</span><br></pre></td></tr></table></figure>
+<h1 id="Set-up-deployment-for-Github"><a href="#Set-up-deployment-for-Github" class="headerlink" title="Set up deployment for Github"></a>Set up deployment for Github</h1>Hosting your blog with <a target="_blank" rel="noopener" href="http://pages.github.com/">Github’s Pages service</a> is free and allows custom domains.<br>To deploy you simply push your repository to Github. </li>
+</ol>
+<p>Deploy also support Heroku / Rsync</p>
+<ol>
+<li><p>Create a new Github repository and name the repository with the format username.github.io,<br>where username is your GitHub user name or organization name.</p>
+</li>
+<li><p>config</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rake setup_github_pages</span><br></pre></td></tr></table></figure>
+<h1 id="Configure-your-blog"><a href="#Configure-your-blog" class="headerlink" title="Configure your blog"></a>Configure your blog</h1><p>The rake task will ask you for a URL of the Github repo.<br>Copy the SSH or HTTPS URL from your newly created repository (e.g. <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:username/username.github.io.git) and paste it in as a response.</p>
+</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rake generate</span><br><span class="line">$ rake deploy</span><br></pre></td></tr></table></figure>
+<p>Don’t forget to commit the source for your blog.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;your message&quot;</span></span><br><span class="line">$ git push origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Custom Domains<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&#x27;your-domain.com&#x27;</span> &gt;&gt; <span class="built_in">source</span>/CNMAME</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="Configure-Octopress"><a href="#Configure-Octopress" class="headerlink" title="Configure Octopress"></a>Configure Octopress</h1><p>In the <strong>_config.yml</strong> there are three sections for configuring your Octopress Blog.</p>
+<h1 id="Start-blogging-with-Octopress"><a href="#Start-blogging-with-Octopress" class="headerlink" title="Start blogging with Octopress"></a>Start blogging with Octopress</h1><p>Blog must be stored in the <strong>source/_posts</strong> directory and named according to Jekll’s naming conventions:<br>YYYY-MM-DD-post-title.markdown</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rake new_post[<span class="string">&quot;title&quot;</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>New Pages<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rake new_page[<span class="string">&quot;page-name&quot;</span>]</span><br></pre></td></tr></table></figure></li>
+<li>Generate &amp; Preview<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ rake generate</span><br><span class="line">$ rake watch</span><br><span class="line">$ rake preview</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="How-to-update"><a href="#How-to-update" class="headerlink" title="How to update"></a>How to update</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git pull octopress master  <span class="comment"># Get the latest Octopress</span></span><br><span class="line">$ bundle install <span class="comment"># Keep gems updated</span></span><br><span class="line">$ rake update_source <span class="comment"># update the template&#x27;s source</span></span><br><span class="line">$ rake update_style <span class="comment"># update the template&#x27;s style</span></span><br></pre></td></tr></table></figure>
+
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Jenux</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2014/04/03/ratchet-build-mobile-apps-with-html/" class="pre-post btn btn-default" title='Ratchet: Build Mobile Apps With HTML'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            Ratchet: Build Mobile Apps With HTML</span>
+    </a>
+    
+    
+    <a href="/2013/07/24/html5-fullscreen-api/" class="next-post btn btn-default" title='Introducing HTML5 FullScreen API'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Introducing HTML5 FullScreen API</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Required"><span class="toc-text">Required</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Get-Started"><span class="toc-text">Get Started</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-deployment-for-Github"><span class="toc-text">Set up deployment for Github</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configure-your-blog"><span class="toc-text">Configure your blog</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Configure-Octopress"><span class="toc-text">Configure Octopress</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Start-blogging-with-Octopress"><span class="toc-text">Start blogging with Octopress</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#How-to-update"><span class="toc-text">How to update</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

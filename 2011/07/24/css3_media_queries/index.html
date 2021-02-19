@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Jenux&#39;s Notes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://jenux.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="CSS3" />
+
+
+<meta name="description" content="本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。  
+
+
+#1. 根据浏览器的窗口大小来选择使用不同的样式 ..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Css3之Media Queries相关样式 |
+    
+    Jenux&#39;s Notes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Jenux&#39;s Notes" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://jenux.github.io">
+                        Jenux&#39;s Notes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Dev/"><i class="fa "></i>
+                                Dev</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Tools/"><i class="fa "></i>
+                                Tools</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Note/"><i class="fa "></i>
+                                Note</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Life"><i class="fa "></i>
+                                Life</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                Timeline</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Css3之Media Queries相关样式">
+            
+            Css3之Media Queries相关样式
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/Notes/">Notes</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/CSS3/" rel="tag">CSS3</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2011/07/24</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                3498</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>本篇是《HTML5与CSS3权威指南》(HTML5 and CSS3: The Definitive Guide)一书第21章的笔记。  </p>
+<a id="more"></a>
+<hr>
+<p>#1. 根据浏览器的窗口大小来选择使用不同的样式 </p>
+<ul>
+<li>CSS中，与媒体相关的样式定义从CSS2.1开始。 CSS2.1中定义了各种媒体类型，如显示器，便携设备，电视机等。</li>
+<li>CSS3中，加入Media Queries模块，允许添加媒体查询(media query)表达式,用以指定媒体类型，然后根据媒体类型来选择应该使用的样式。<br>即，不改变内容的情况下，在样式中选择一种页面的布局以精确适应不同设备。</li>
+</ul>
+<p>#2. 在iPhone中的显示<br>iPhone 3GS分辨率是320 x 480, 在文中示例中打开demo页，却不是以设置的小布局渲染页面。因为iPhone中使用的safari显示页面时将窗口宽度作为980px来显示。 这种情况下，可以利用<code>&lt;meta&gt;</code>标签在页面中指定safari在处理本页面时按照多少像素的窗口宽度来进行:  </p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=600px&quot;&gt;
+待测试: &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+</code></pre>
+<p>#3. Media Queries的使用方法<br>    @media 设备类型 and (设备特性) { 样式代码 }</p>
+<ul>
+<li>在Media Queries中可以指定的值与该值所代表的设备类型  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">可以指定的值</th>
+<th align="left">设备类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">all</td>
+<td align="left">所有设备</td>
+</tr>
+<tr>
+<td align="left">screen</td>
+<td align="left">电脑显示器</td>
+</tr>
+<tr>
+<td align="left">print</td>
+<td align="left">打印用纸或打印预览视图</td>
+</tr>
+<tr>
+<td align="left">handheld</td>
+<td align="left">便携设备</td>
+</tr>
+<tr>
+<td align="left">tv</td>
+<td align="left">电视机类型的设备</td>
+</tr>
+<tr>
+<td align="left">speech</td>
+<td align="left">语音和音频合成器</td>
+</tr>
+<tr>
+<td align="left">braille</td>
+<td align="left">盲人用点字法触觉回馈设备</td>
+</tr>
+<tr>
+<td align="left">embossed</td>
+<td align="left">盲文打印机</td>
+</tr>
+<tr>
+<td align="left">projection</td>
+<td align="left">各种投影设备</td>
+</tr>
+<tr>
+<td align="left">tty</td>
+<td align="left">使用固定密度字母栅格的媒介， 如电传打字机和终端</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Css中的设备特性共13种</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th align="left">可指定的值</th>
+<th align="center">是否允许min/max前缀</th>
+<th align="left">特性说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">width</td>
+<td align="left">带单位长度值:如400px</td>
+<td align="center">是</td>
+<td align="left">浏览器窗口的宽度</td>
+</tr>
+<tr>
+<td align="left">height</td>
+<td align="left">同上</td>
+<td align="center"></td>
+<td align="left">浏览器窗口的高度</td>
+</tr>
+<tr>
+<td align="left">device-width</td>
+<td align="left">同上</td>
+<td align="center"></td>
+<td align="left">设备屏幕分辨率的宽度值</td>
+</tr>
+<tr>
+<td align="left">device-height</td>
+<td align="left">同上</td>
+<td align="center"></td>
+<td align="left">设备屏幕分辨率的高度值</td>
+</tr>
+<tr>
+<td align="left">orientation</td>
+<td align="left">portrait或landscape</td>
+<td align="center">否</td>
+<td align="left">浏览器窗口方向，高度大于宽度时为portrait</td>
+</tr>
+<tr>
+<td align="left">aspect-radio</td>
+<td align="left">比例值:如16/9</td>
+<td align="center"></td>
+<td align="left">浏览器窗口纵横比，宽度/高度</td>
+</tr>
+<tr>
+<td align="left">device-aspect-radio</td>
+<td align="left">同上</td>
+<td align="center"></td>
+<td align="left">屏幕分辨率纵横比，宽度/高度</td>
+</tr>
+<tr>
+<td align="left">color</td>
+<td align="left">整数值</td>
+<td align="center"></td>
+<td align="left">设备使用多少位的颜色值，如果不是彩色设备，该值为0</td>
+</tr>
+<tr>
+<td align="left">color-index</td>
+<td align="left">同上</td>
+<td align="center"></td>
+<td align="left">色彩表中的色彩数</td>
+</tr>
+<tr>
+<td align="left">monochrome</td>
+<td align="left">同上</td>
+<td align="center"></td>
+<td align="left">单色帧缓冲器中每像素的字节数</td>
+</tr>
+<tr>
+<td align="left">resolution</td>
+<td align="left">分辨率值，如300dpi</td>
+<td align="center"></td>
+<td align="left">设备分辨率</td>
+</tr>
+<tr>
+<td align="left">scan</td>
+<td align="left">progressive或interlace</td>
+<td align="center">否</td>
+<td align="left">电视类型扫描方式，progressive逐行扫描</td>
+</tr>
+<tr>
+<td align="left">grid</td>
+<td align="left">0或1</td>
+<td align="center">否</td>
+<td align="left">设备是基于樱格还是基于位图，基于栅格时为1</td>
+</tr>
+</tbody></table>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Jenux</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2011/07/28/Google_code_prettify/" class="pre-post btn btn-default" title='为任意项目甚至html静态页面增加代码高亮的插件'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            为任意项目甚至html静态页面增加代码高亮的插件</span>
+    </a>
+    
+    
+    <a href="/2011/07/05/jquery_plugin_supersized/" class="next-post btn btn-default" title='Supersized,漂亮的全背景jQuery相册展示插件'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Supersized,漂亮的全背景jQuery相册展示插件</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <p>暂无目录</p>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

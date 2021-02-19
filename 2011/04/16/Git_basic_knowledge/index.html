@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Jenux&#39;s Notes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://jenux.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="Git" />
+
+
+<meta name="description" content="《看日记学GIT》是Git入门不错的系列文章，最近开始在GitHub上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Git初学者基础知识 |
+    
+    Jenux&#39;s Notes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Jenux&#39;s Notes" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+
+
+
+    
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://jenux.github.io">
+                        Jenux&#39;s Notes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Dev/"><i class="fa "></i>
+                                Dev</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Tools/"><i class="fa "></i>
+                                Tools</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Note/"><i class="fa "></i>
+                                Note</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/Life"><i class="fa "></i>
+                                Life</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                Timeline</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Git初学者基础知识">
+            
+            Git初学者基础知识
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/Notes/">Notes</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/Git/" rel="tag">Git</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2011/04/16</span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                3597</strong>
+            天之前发表，文中内容可能已经过时。
+        </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>《<a target="_blank" rel="noopener" href="http://roclinux.cn/?p=343">看日记学GIT</a>》是Git入门不错的系列文章，最近开始在<a target="_blank" rel="noopener" href="http://github.com/">GitHub</a>上托管自己的一些代码，也用Github Pages服务来搭建自己的笔记库，经常在上下班路上翻阅一下《看日记学GIT》，颇有收获。<br>其第9章是对前8章的复习总结，基本上涵盖了入门者使用Git的流程和基本命令，在这里摘录一下部分内容，如果你对Git感兴趣，推荐阅读本系列文章。<br>点击<a target="_blank" rel="noopener" href="http://dl.dbank.com/c0n8xljq3a">这里</a>是我收藏的一份pdf版本  </p>
+<a id="more"></a>
+
+<p>#1 获得帮助可以使用类似 <code>man git-****</code>的命令格式, 如:  </p>
+<pre><code>man git-commit 
+man git-pull
+man git-merge
+</code></pre>
+<p>#2 使用Git之前，应该提交简单的个人信息，以便区分不同的提交者的身份  </p>
+<pre><code>git config -global user.name &quot;your name&quot;
+git config -global user.email &quot;your email address&quot;
+</code></pre>
+<p>#3 新开启一个项目，先建立一个目录(eg:myproject)，然后:</p>
+<pre><code>cd myproject
+git init
+git add .
+git commit -m &#39;Start my git project.&#39;
+</code></pre>
+<p>这样一个新项目就诞生了。</p>
+<p>#4 修改了项目源代码，需要提交时:</p>
+<pre><code>git add &#39;新建或修改的文件&#39;  #git add .
+git commit
+或git commit -a //直接提交修改过的文件
+</code></pre>
+<p>#5 源码修改对比:</p>
+<pre><code>git diff    //git add使用之前有效，如果已经add,此命令输出为空 
+git diff -cached //这个命令在git add之后，git commit之前有效
+git status //这个命令在git commit之前有效，会输出文件修改状态
+</code></pre>
+<p>#6 查看日志</p>
+<pre><code>git log
+git log -p  // 输入更详细的日志内容，包括修改了哪些源码
+</code></pre>
+<p>#7 创建分支，分支开发成功则合并到主分支，否则放弃该分支</p>
+<pre><code>git branch experimental //创建一个名为experimental的分支
+git branch //显示当前分支，标注*号的为当前所在分支
+git checkout experimental  //切换到experimental分支
+...开发过程
+git commit -a //在experimental分支上修改源代码并提交
+git checkout master //切回主分支
+git merge experimental  //合并到主分支
+git commit -a //彻底完成分支合并，提交主分支
+git branch -d experimental // 删除已合并的experimental分支
+
+如果分支开发失败:
+git checkout master
+git branch -D experimental 
+</code></pre>
+<p>#8 查看图形化分支信息</p>
+<pre><code>gitk
+</code></pre>
+<p>#9 Git协作</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Jenux</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2011/04/18/contenteditable_buglist/" class="pre-post btn btn-default" title='Contenteditable开发的一些问题'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            Contenteditable开发的一些问题</span>
+    </a>
+    
+    
+    <a href="/2011/04/12/welcome_to_markdown/" class="next-post btn btn-default" title='Markdown的一些基础知识'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            Markdown的一些基础知识</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <p>暂无目录</p>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2021
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
